@@ -1,0 +1,20 @@
+@import "reset";
+
+article.a4 {
+    display: block;
+    margin: 0 auto;
+    width: 21cm;
+    height: 29.7cm;
+    
+    &[layout="landscape"] {
+        width: 29.7cm;
+        height: 21cm;
+    }
+}
+
+@media print {
+    body, article.a4 {
+        margin: 0;
+        box-shadow: none;
+    }
+}
