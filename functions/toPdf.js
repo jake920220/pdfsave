@@ -11,7 +11,7 @@ const obj = {
     try {
       const data = reqData;
 
-      const templatePath = path.resolve('htmls', `${fileName}.html`);
+      const templatePath = path.resolve('public', 'htmls', `${fileName}.html`);
       const content = await readFile(templatePath, 'utf8');
 
       const template = handlebars.compile(content);
@@ -29,7 +29,7 @@ const obj = {
     const page = await browser.newPage();
     await page.setContent(html);
 
-    await page.pdf({path: path.resolve('pdfs', `${fileName}.pdf`), format:'A4'});
+    await page.pdf({path: path.resolve('public', 'pdfs', `${fileName}.pdf`), format:'A4'});
     return browser.close();
   }
 };
